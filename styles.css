@@ -10832,14 +10832,14 @@ label {
     font-weight: 500;
 }
 li.active>a {
-  color: black;
+  color: black!important;
   background-color: #fff;
-  padding: 16px 15px 19px 15px;
+  padding: 16px 15px 22px 15px!important;
   text-decoration: none;
-  z-index: 100;
-  position: relative;
+  z-index: 100!important;
+  position: relative!important;
   border: 1px solid #ccc;
-  border-bottom: 0px;
+  border-bottom: 0px!important;
   border-radius: 4px 4px 0px 0px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
@@ -10860,4 +10860,11 @@ a:focus, a:hover {
 #dsp-e {
   font-weight: 400;
   font-style: italic;
+}
+code a:hover {
+  background: none;
+  padding: 0px;
+}
+li > a:hover {
+  color: black!important;
 }

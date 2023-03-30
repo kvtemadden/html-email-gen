@@ -1,5 +1,22 @@
 var htmlContent;
 var display = document.getElementById('dsp-e');
+var code = document.getElementById("staticEmailCode");
+var html = document.getElementById("staticEmail");
+
+previewCode = () => {
+  
+  var codeClass = code.classList.contains("hide");
+  
+  if(codeClass) {
+    html.classList.add("hide");
+    code.classList.remove("hide");
+  }
+  else {
+    code.classList.add("hide");
+    html.classList.remove("hide");
+  }
+
+}
 
 copyHTML = () => {
     // Get the text field
@@ -14,6 +31,8 @@ copyHTML = () => {
 }
 
 updateTxt = (e) => {
+
+  e == null ? e = document.getElementsByClassName('active')[0].id : e;
 
   switch(e) {
     case "email1":
@@ -45,7 +64,8 @@ convert = (e) => {
 
   buildEmail(e);
 
-  document.getElementById('staticEmail').value = htmlContent;
+  html.value = htmlContent;
+  code.innerHTML = htmlContent;
 
 }
 

@@ -32,25 +32,25 @@
 
                     <!-- Name input-->
                     <div class="form-floating mb-4">
-                        <input class="form-control" id="name" type="text" placeholder="Enter your name...">
+                        <input class="form-control" id="name" type="text" placeholder="Enter your name..." onchange="updateTxt()">
                         <label for="name" class="fw-normal">Sender full name</label>
                     </div>
 
                     <!-- Phone number input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890">
+                        <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" onchange="updateTxt()">
                         <label for="phone" class="fw-normal">Sender phone number</label>
                     </div>
 
                     <!-- Subject line input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="subject" type="text" placeholder="Hi there!">
+                        <input class="form-control" id="subject" type="text" placeholder="Hi there!" onchange="updateTxt()">
                         <label for="subject" class="fw-normal">Email 1 subject line</label>
                     </div>
 
                     <!-- Team input-->
                     <div class="form-floating mb-3">
-                        <select class="form-select" id="brand" aria-label="Sales">
+                        <select class="form-select" id="brand" aria-label="Sales" onchange="updateTxt()">
                             <option selected>Which brand?</option>
                             <option value="Sales">Sales</option>
                             <option value="Engineering">Engineering</option>
@@ -96,10 +96,11 @@
             </section>
             <section class="col-md-8 col-12 h-100">
                 <div class="px-md-5 h-100">
-                    <div class="d-flex justify-content-between align-items-center"><div style="font-weight: 700;">Displaying: <span id="dsp-e"></span></div><div><p class="btn btn-primary mb-3" onclick="copyHTML()">Copy HTML</p></div></div>
+                    <div class="d-flex justify-content-between align-items-center"><div style="font-weight: 700;">Displaying: <span id="dsp-e"></span></div><div><p class="btn btn-primary mb-3 mx-2" onclick="previewCode()">Preview Code</p><p class="btn btn-primary mb-3" onclick="copyHTML()">Copy HTML</p></div></div>
                     <div id="email3" class="p-0 form-floating h-100">
                         <!-- <input type="text" readonly="" class="" id="staticEmail23" style="width: 100%;height: 100%;"> -->
                         <textarea class="form-control-plaintext form-control bg-white" id="staticEmail" type="text" placeholder="Enter your message here..." style="height: 91%"></textarea>
+                        <code class="form-control-plaintext form-control bg-white hide" id="staticEmailCode" type="text" placeholder="Enter your message here..." style="height: 91%; overflow: scroll;"></code>
                     </div>
                 </div>
             </section>

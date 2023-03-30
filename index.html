@@ -59,6 +59,24 @@
                           </select>
                     </div>
 
+                    <!-- Standard salutations input-->
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="salu" aria-label="Hi {{CONTACT_FIRST_NAME}}" onchange="updateTxt()">
+                            <option selected>Use standard salutation?</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            </select>
+                    </div>
+
+                    <!-- Standard salutations input-->
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="signOff" aria-label="Standard sign off" onchange="updateTxt()">
+                            <option selected>Use standard sign off?</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            </select>
+                    </div>
+
                     <!-- Email selector -->
                     <ul class="list-inline mt-5 mb-4">
                         <li id="em1" class="active" onclick="updateTxt(this.id)"><a id="em11" href="#email1" data-toggle="pill" onclick="updateTxt(this.id)">Email 1</a></li>

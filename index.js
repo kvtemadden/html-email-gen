@@ -72,8 +72,11 @@ convert = (e) => {
 buildEmail = (e) => {
   let tel = document.getElementById('phone').value;
   let cons = document.getElementById('name').value;
+  let fn = cons.split(' ')[0];
   let subject = document.getElementById('subject').value;
   let brand = document.getElementById('brand').value;
+  let inclSal = document.getElementById('salu').value;
+  let inclSO = document.getElementById('signOff').value;
 
   let subj = `<strong>Subject: </strong>${subject}<br /><br />`
   let fwdSubj = `<strong>Subject: </strong>FW: ${subject}<br /><br />`
@@ -87,10 +90,12 @@ buildEmail = (e) => {
                 </div>
                 <strong>From:</strong> ${cons}<br />
                 <strong>To: </strong>{{CONTACT_FIRST_NAME}} {{CONTACT_LAST_NAME}} <span style="box-sizing: border-box; color: #0000FF; text-decoration: underline"><{{CONTACT_EMAIL}}></span><br />`
+  let salu = `Hi {{CONTACT_FIRST_NAME}}<br/><br/>`
+  let sOff = `<br/><br/>Best,<br/>${fn}<br/>`;
 
-  let block1 = document.getElementById('21').value.replace(/(?:\r\n|\r|\n)/g, '<br/>');
-  let block2 = document.getElementById('22').value.replace(/(?:\r\n|\r|\n)/g, '<br/>') + '<br/>' + fwd + subj + document.getElementById('21').value.replace(/(?:\r\n|\r|\n)/g, '<br/>'); // email 2
-  let block3 = document.getElementById('23').value.replace(/(?:\r\n|\r|\n)/g, '<br/>') + '<br/>' + fwd + fwdSubj + block2; // email 3
+  let block1 = (inclSal == "Yes" ? salu : "") + document.getElementById('21').value.replace(/(?:\r\n|\r|\n)/g, '<br/>') + (inclSO == "Yes" ? sOff : "");
+  let block2 = (inclSal == "Yes" ? salu : "") + document.getElementById('22').value.replace(/(?:\r\n|\r|\n)/g, '<br/>') + (inclSO == "Yes" ? sOff : '<br/>') + fwd + subj + (inclSal == "Yes" ? salu : "") + document.getElementById('21').value.replace(/(?:\r\n|\r|\n)/g, '<br/>') + (inclSO == "Yes" ? sOff : '<br/>'); // email 2
+  let block3 = (inclSal == "Yes" ? salu : "") + document.getElementById('23').value.replace(/(?:\r\n|\r|\n)/g, '<br/>') + (inclSO == "Yes" ? sOff : '<br/>') + fwd + fwdSubj + block2; // email 3
 
 
   htmlContent = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

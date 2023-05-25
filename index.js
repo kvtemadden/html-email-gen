@@ -10,7 +10,7 @@ var modal = document.getElementById('myModal')
 
 // last session check
 
-if (window.localStorage.length > 0) {
+if (window.localStorage.getItem("html-gen")) {
   modal.style.display = "block";
 }
 
@@ -331,6 +331,7 @@ fields.forEach(function(field) {
     
     // Save the value to local storage with the data-field attribute as the key
     localStorage.setItem(fieldName, value);
+    localStorage.setItem('html-gen', "Yes");
   });
 });
 

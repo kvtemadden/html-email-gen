@@ -39,19 +39,19 @@
                 <form id="contactForm" class="mt-5 pt-4 row mx-auto" style="max-width: 900px;">
                     
                     <!-- Name input-->
-                    <div class="form-floating mb-4">
+                    <div class="form-floating mb-4 px-md-0">
                         <input class="form-control" id="name" type="text" placeholder="Enter your name..." onchange="updateTxt()" data-field="name">
                         <label for="name" class="fw-normal">Sender full name</label>
                     </div>
 
                     <!-- Phone number input-->
-                    <div class="form-floating mb-3">
+                    <div class="form-floating mb-3 px-md-0">
                         <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" onchange="updateTxt()" data-field="phone">
                         <label for="phone" class="fw-normal">Sender phone number</label>
                     </div>
 
                     <!-- Subject line input-->
-                    <div class="form-floating mb-5">
+                    <div class="form-floating mb-5 px-md-0">
                         <input class="form-control" id="subject" type="text" placeholder="Hi there!" onchange="updateTxt()" data-field="subject">
                         <label for="subject" class="fw-normal">Email 1 subject line</label>
                     </div>
@@ -145,12 +145,13 @@
                             <li id="em2" onclick="updateTxt(this.id)"><a href="#email2" id="em22" data-toggle="pill" onclick="updateTxt(this.id)">Email 2 (FW1)</a></li>
                             <li id="em3" onclick="updateTxt(this.id)"><a href="#email3" id="em33" data-toggle="pill" onclick="updateTxt(this.id)">Email 3 (FW2)</a></li>
                         </ul>
-                        <div><p class="btn btn-primary mb-3 mx-2" onclick="previewCode()">Preview Code</p><p class="btn btn-primary mb-3" onclick="copyHTML()">Copy HTML</p></div>
+                        <div><p class="btn btn-primary mb-3 mx-2" onclick="previewCode()">Preview Code</p><p id="copy" class="btn btn-primary mb-3" onclick="copyHTML()">Copy HTML</p></div>
                     </div>
+                    
                     <div id="email3" class="p-0 form-floating h-100">
                         <!-- <input type="text" readonly="" class="" id="staticEmail23" style="width: 100%;height: 100%;"> -->
                         <textarea class="form-control-plaintext form-control bg-white hide" id="staticEmail" type="text" placeholder="Enter your message here..." style="height: 91%"></textarea>
-                        <code class="form-control-plaintext form-control bg-white" id="staticEmailCode" type="text" placeholder="Enter your message here..." style="height: 91%; overflow: scroll;"></code>
+                        <code class="form-control-plaintext form-control bg-white" id="staticEmailCode" type="text" placeholder="Enter your message here..." style="height: 91%; overflow: scroll; padding-left: 10px;"></code>
                     </div>
                 </div>
                 <div class="text-left px-0 mt-3">

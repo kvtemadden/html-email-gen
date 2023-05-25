@@ -18,50 +18,60 @@
 
 <body class="bg-light">
     <!-- Form -->
-    <section class="pt-5" style="height: 250px;">
-        <div class="text-center mb-5 h-50">
+    <section class="pt-5 mb-5" style="height: 250px;max-width: 500px;margin: auto;">
+        <div class="text-center mb-5">
             <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
             <h2 class="fw-bolder">Email HTML Generator</h2>
             <p class="lead mb-0">Enter your email text below.</p>
         </div>
+        <ul class="nav nav-pills nav-fill">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" data-step="prev-step">Set up</a>
+            </li>
+            <li class="nav-item p-0" id="em-btn" data-toggle="tooltip" data-placement="bottom" title="Complete 'Set up' section first">
+              <a class="nav-link disabled" href="#" data-step="next-step">Email</a>
+            </li>
+        </ul>
     </section>
     <div class="row justify-content-center" style="height: 500px;">
         <div class="row col-lg-8 mx-auto">
-            <section class="col-md-4 col-12">
-                <form id="contactForm" class="mt-5 pt-4">
-
+            <section id="setup" class="col-12" data-section="form-email">
+                <form id="contactForm" class="mt-5 pt-4 row mx-auto" style="max-width: 900px;">
+                    
                     <!-- Name input-->
                     <div class="form-floating mb-4">
-                        <input class="form-control" id="name" type="text" placeholder="Enter your name..." onchange="updateTxt()">
+                        <input class="form-control" id="name" type="text" placeholder="Enter your name..." onchange="updateTxt()" data-field="name">
                         <label for="name" class="fw-normal">Sender full name</label>
                     </div>
 
                     <!-- Phone number input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" onchange="updateTxt()">
+                        <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" onchange="updateTxt()" data-field="phone">
                         <label for="phone" class="fw-normal">Sender phone number</label>
                     </div>
 
                     <!-- Subject line input-->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="subject" type="text" placeholder="Hi there!" onchange="updateTxt()">
+                    <div class="form-floating mb-5">
+                        <input class="form-control" id="subject" type="text" placeholder="Hi there!" onchange="updateTxt()" data-field="subject">
                         <label for="subject" class="fw-normal">Email 1 subject line</label>
                     </div>
 
                     <!-- Team input-->
-                    <div class="form-floating mb-3">
-                        <select class="form-select" id="brand" aria-label="Sales" onchange="updateTxt()">
+                    <div class="form-floating mb-3 col-lg-6 px-md-0">
+                        <select class="form-select" id="brand" aria-label="Sales" onchange="updateTxt()" data-field="brand">
                             <option selected>Which brand?</option>
                             <option value="Sales">Sales</option>
                             <option value="Engineering">Engineering</option>
                             <option value="Care">Care</option>
                             <option value="IT">IT</option>
+                            <option value="Response">Response</option>
+                            <option value="T4C">T4C</option>
                           </select>
                     </div>
 
                     <!-- Standard salutations input-->
-                    <div class="form-floating mb-3">
-                        <select class="form-select" id="salu" aria-label="Hi {{CONTACT_FIRST_NAME}}" onchange="updateTxt()">
+                    <div class="form-floating mb-3 col-lg-6 pe-md-0 px-md-2">
+                        <select class="form-select" id="salu" aria-label="Hi {{CONTACT_FIRST_NAME}}" onchange="updateTxt()" data-field="salu">
                             <option selected>Use standard salutation?</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
@@ -69,27 +79,37 @@
                     </div>
 
                     <!-- Standard salutations input-->
-                    <div class="form-floating mb-3">
-                        <select class="form-select" id="signOff" aria-label="Standard sign off" onchange="updateTxt()">
+                    <div class="form-floating mb-3 col-lg-6 px-md-0">
+                        <select class="form-select" id="signOff" aria-label="Standard sign off" onchange="updateTxt()" data-field="signOff">
                             <option selected>Use standard sign off?</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
                             </select>
                     </div>
 
+                    <!-- Standard email 1 & 2 input-->
+                    <div class="form-floating mb-5 pb-3 col-lg-6 pe-md-0 px-md-2">
+                        <select class="form-select" id="em" aria-label="Standard sign off" onchange="genericEmail()" data-field="em">
+                            <option selected>Use generic fw1 & fw2?</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                            </select>
+                    </div>
+
+
                     <!-- Email selector -->
-                    <ul class="list-inline mt-5 mb-4">
+                    <ul class="list-inline mt-3 pt-5 mb-4">
                         <li id="em1" class="active" onclick="updateTxt(this.id)"><a id="em11" href="#email1" data-toggle="pill" onclick="updateTxt(this.id)">Email 1</a></li>
                         <li id="em2" onclick="updateTxt(this.id)"><a href="#email2" id="em22" data-toggle="pill" onclick="updateTxt(this.id)">Email 2 (FW1)</a></li>
                         <li id="em3" onclick="updateTxt(this.id)"><a href="#email3" id="em33" data-toggle="pill" onclick="updateTxt(this.id)">Email 3 (FW2)</a></li>
                     </ul>
 
                     <!-- Email inputs -->
-                    <div class="tab-content">
+                    <div class="tab-content px-0">
                         <!-- Message input - Email 1 -->
                         <div id="email1" class="form-floating mb-3 tab-pane fade in active" onclick="updateTxt(this.id)">
                             <textarea class="form-control" id="21" type="text" placeholder="Enter your message here..."
-                                oninput="convert(this.id)" style="height: 250px"></textarea>
+                                oninput="convert(this.id)" style="height: 250px" data-field="email-1"></textarea>
                             <label for="message" class="fw-normal">Email 1 content</label>
                             <!-- <pre><code id="staticEmail21"></code></pre> -->
                             
@@ -109,19 +129,51 @@
                             <label for="message" class="fw-normal">Email 3 content</label>
                         </div>
                     </div>
-
+                    <div class="text-right px-0 mt-3">
+                        <a id="next-step" class="btn btn-primary sq py-3 px-4" aria-current="page" href="#">Next step →</a>
+                    </div>
                 </form>
             </section>
-            <section class="col-md-8 col-12 h-100">
-                <div class="px-md-5 h-100">
-                    <div class="d-flex justify-content-between align-items-center"><div style="font-weight: 700;">Displaying: <span id="dsp-e"></span></div><div><p class="btn btn-primary mb-3 mx-2" onclick="previewCode()">Preview Code</p><p class="btn btn-primary mb-3" onclick="copyHTML()">Copy HTML</p></div></div>
+            
+            <section id="email" class="col-12 h-100 mt-5 hide mx-auto" data-section="form-email" style="max-width: 900px;">
+
+                <div class="h-100">
+                    <!-- Email selector -->
+                    <div class="d-flex justify-content-between align-items-baseline">
+                        <ul class="list-inline  mb-4">
+                            <li id="em1" class="active" onclick="updateTxt(this.id)"><a id="em11" href="#email1" data-toggle="pill" onclick="updateTxt(this.id)">Email 1</a></li>
+                            <li id="em2" onclick="updateTxt(this.id)"><a href="#email2" id="em22" data-toggle="pill" onclick="updateTxt(this.id)">Email 2 (FW1)</a></li>
+                            <li id="em3" onclick="updateTxt(this.id)"><a href="#email3" id="em33" data-toggle="pill" onclick="updateTxt(this.id)">Email 3 (FW2)</a></li>
+                        </ul>
+                        <div><p class="btn btn-primary mb-3 mx-2" onclick="previewCode()">Preview Code</p><p class="btn btn-primary mb-3" onclick="copyHTML()">Copy HTML</p></div>
+                    </div>
                     <div id="email3" class="p-0 form-floating h-100">
                         <!-- <input type="text" readonly="" class="" id="staticEmail23" style="width: 100%;height: 100%;"> -->
-                        <textarea class="form-control-plaintext form-control bg-white" id="staticEmail" type="text" placeholder="Enter your message here..." style="height: 91%"></textarea>
-                        <code class="form-control-plaintext form-control bg-white hide" id="staticEmailCode" type="text" placeholder="Enter your message here..." style="height: 91%; overflow: scroll;"></code>
+                        <textarea class="form-control-plaintext form-control bg-white hide" id="staticEmail" type="text" placeholder="Enter your message here..." style="height: 91%"></textarea>
+                        <code class="form-control-plaintext form-control bg-white" id="staticEmailCode" type="text" placeholder="Enter your message here..." style="height: 91%; overflow: scroll;"></code>
                     </div>
                 </div>
+                <div class="text-left px-0 mt-3">
+                    <a id="prev-step" class="btn btn-primary sq py-3 px-4" aria-current="page" href="#" style="z-index: 100; position: absolute;">← Back to set up</a>
+                </div>
             </section>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;background: #00000073;" data-backdrop="true">
+        <div class="modal-dialog" role="document" style="margin-top: 20vh">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Welcome back!</h4>
+            </div>
+            <div class="modal-body">
+            Do you want to use the same information as last time?
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-warning" data-dismiss="modal" onclick="closeModal()">No</button>
+            <button type="button" class="btn btn-success" onclick="modalData()">Yes</button>
+            </div>
+        </div>
         </div>
     </div>
     <!-- Bootstrap core JS-->
@@ -129,7 +181,6 @@
     <script src="index.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
 
 
 

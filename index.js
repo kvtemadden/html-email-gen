@@ -243,13 +243,7 @@ buildEmail = (e) => {
   htmlContent = `
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="apple-touch-icon" href="/cfg-lib/images/plus-logo.png" /><meta name="theme-color" content="#222c32" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="apple-touch-icon" href="/cfg-lib/images/plus-logo.png" /><meta name="theme-color" content="#222c32" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="apple-touch-icon" href="/cfg-lib/images/plus-logo.png" /><meta name="theme-color" content="#222c32" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="apple-touch-icon" href="/cfg-lib/images/plus-logo.png" /><meta name="theme-color" content="#222c32" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="apple-touch-icon" href="/cfg-lib/images/plus-logo.png" />
-<meta name="theme-color" content="#222c32" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="apple-touch-icon" href="/cfg-lib/images/plus-logo.png" />
-<meta name="theme-color" content="#222c32" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<head>
 </head>
 <body style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: none; background-color: #ffffff; box-sizing: border-box; font-family: Calibri, sans-serif; font-size: 16px; height: 100%; line-height: 26px; width: 100% !important" bgcolor="#ffffff">
 <style type="text/css">
@@ -356,12 +350,12 @@ color: #0000FF !important;
                     <span style="font-family: Calibri, sans-serif; font-size: 16px; line-height: 26px; box-sizing: border-box;">
                         <img alt="Image" src=${
                           brand == "IT"
-                            ? "https://www.coburgbanks.co.uk/wp-content/uploads/2022/01/CB-IT-Logo-x1.png"
+                            ? "'https://www.coburgbanks.co.uk/wp-content/uploads/2022/01/CB-IT-Logo-x1.png'"
                             : brand == "T4C"
-                            ? "https://temps4care.co.uk/wp-content/uploads/2022/08/Main-Logo-Editing-purposes.png width='200'"
+                            ? "'https://temps4care.co.uk/wp-content/uploads/2022/08/Main-Logo-Editing-purposes.png' width='200'"
                             : brand == "Response"
-                            ? "https://wiredplusimg.s3.amazonaws.com/FAR1efvX/editor_images/Response%20Email%20Logo.png"
-                            : "https://getdrip.s3.amazonaws.com/uploads/image_upload/image/225682/embeddable_8d5c1764-d7bd-4e27-894c-85a4eeaee1be.png"
+                            ? "'https://wiredplusimg.s3.amazonaws.com/FAR1efvX/editor_images/Response%20Email%20Logo.png'"
+                            : "'https://getdrip.s3.amazonaws.com/uploads/image_upload/image/225682/embeddable_8d5c1764-d7bd-4e27-894c-85a4eeaee1be.png'"
                         } style="font-family: Calibri, sans-serif; font-size: 16px; line-height: 26px; box-sizing: border-box; max-width: 100%; -ms-interpolation-mode: bicubic;"/>
                         </span></a>
                         <br style="font-family: Calibri, sans-serif; font-size: 16px; line-height: 26px; box-sizing: border-box;"/>
@@ -378,11 +372,7 @@ color: #0000FF !important;
               </tr>
             </table>
           </div>
-          
-        </td>
-      </tr>
-    </table>    
-</body>
+      </body>
   </html>`;
 };
 

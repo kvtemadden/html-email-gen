@@ -297,7 +297,7 @@ color: #ffffff; background-color: #B67A0D; text-decoration: none; border-color: 
             <table width="100%" cellpadding="0" cellspacing="0" style="font-family: Calibri, sans-serif; font-size: 16px; line-height: 26px; box-sizing: border-box; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
               <tr style="font-family: Calibri, sans-serif; font-size: 16px; line-height: 26px; box-sizing: border-box;">
               <td class="footer-content" style="font-family: Calibri, sans-serif; font-size: 13px; line-height: 22px; box-sizing: border-box; vertical-align: top; font-style: italic; width: 100%; clear: both; color: #2C343F; border-top-width: 1px; border-top-color: #d0d0d0; border-top-style: solid; padding: 15px 0px 5px;" valign="top">
-                <a href=${ brand == "Response" ? "https://responsewebrecruitment.co.uk/" : brand == "T4C" ? "https://temps4care.co.uk" : "https://www.coburgbanks.co.uk?__s=xxxxxxx"} target="_blank" style="font-family: Calibri, sans-serif; font-size: 16px; line-height: 26px; box-sizing: border-box; color: #0000FF; text-decoration: underline;">
+                <a href=`${ brand == "Response" ? "https://responsewebrecruitment.co.uk/" : brand == "T4C" ? "https://temps4care.co.uk" : "https://www.coburgbanks.co.uk?__s=xxxxxxx"}` target="_blank" style="font-family: Calibri, sans-serif; font-size: 16px; line-height: 26px; box-sizing: border-box; color: #0000FF; text-decoration: underline;">
                     <span style="font-family: Calibri, sans-serif; font-size: 16px; line-height: 26px; box-sizing: border-box;">
                         <img alt="Image" src=${brand == 'IT' ? 'https://www.coburgbanks.co.uk/wp-content/uploads/2022/01/CB-IT-Logo-x1.png' : brand == "T4C" ? "https://temps4care.co.uk/wp-content/uploads/2022/08/Main-Logo-Editing-purposes.png width='200'" : brand == "Response" ? "https://wiredplusimg.s3.amazonaws.com/FAR1efvX/editor_images/Response%20Email%20Logo.png" : "https://getdrip.s3.amazonaws.com/uploads/image_upload/image/225682/embeddable_8d5c1764-d7bd-4e27-894c-85a4eeaee1be.png"} style="font-family: Calibri, sans-serif; font-size: 16px; line-height: 26px; box-sizing: border-box; max-width: 100%; -ms-interpolation-mode: bicubic;"/>
                         </span></a>
@@ -310,10 +310,6 @@ color: #ffffff; background-color: #B67A0D; text-decoration: none; border-color: 
               </tr>
             </table>
           </div>
-          
-        </td>
-      </tr>
-    </table>    
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WS8R9KX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function (w, d, s, l, i) {
       w[l] = w[l] || [];
       w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });

@@ -306,7 +306,7 @@ color: #0000FF !important;
         ? ""
         : brand == "Response"
         ? ""
-        : `<a href='https://coburgbanks.co.uk/book-a-call/'><span>Book a call in my diary </span></a> |  <a href='https://coburgbanks.co.uk/${brand}-recruitment-agencies/'><span>coburgbanks.co.uk</span></a>`
+        : `<a href='https://coburgbanks.co.uk/book-a-call/'><span>Book a call in my diary </span></a> |  <a href='https://coburgbanks.co.uk/${brand.toLowerCase()}-recruitment-agencies/'><span>coburgbanks.co.uk</span></a>`
     }
      <br/><br/>
     <strong><span style="color:${
